@@ -18,4 +18,4 @@ mariadb -e "FLUSH PRIVILEGES;"
 
 service mariadb stop
 sleep 1
-mariadbd --user=root 2>/dev/null
+mysqld_safe --bind-address=0.0.0.0 2>/dev/null

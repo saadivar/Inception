@@ -3,11 +3,12 @@ services:
   mariadb:
     build: ./mariadb
     container_name: mariadb
+    image: mariadb
     restart: on-failure
     networks:
       - inception
     env_file:
-      - .env
+      - ../.env
     volumes:
       - mariadb:/var/lib/mysql
   ngnix:
@@ -21,7 +22,7 @@ services:
     networks:
       - inception
     env_file:
-      - .env
+      - ../.env
     volumes:
       - wordpress:/var/www/wordpress
 
@@ -34,7 +35,7 @@ services:
     networks:
       - inception
     env_file:
-      - .env
+      - ../.env
     volumes:
       - wordpress:/var/www/wordpress
   
